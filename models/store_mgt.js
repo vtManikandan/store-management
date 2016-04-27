@@ -51,7 +51,13 @@ module.exports = function(db){
                     "name" : materials.name, 
                     "rate" : materials.rate, 
                     "quantity" : materials.quantity,
-                    "datetime": new Date()
+                    "datetime": new Date(),
+                    "history": [{
+                        "name" : materials.name, 
+                        "rate" : materials.rate, 
+                        "quantity" : materials.quantity,
+                        "datetime": new Date()
+                    }]
                 }
                 return  materialsCollection.insert(obj);
             }
